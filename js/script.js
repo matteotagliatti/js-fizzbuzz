@@ -1,16 +1,24 @@
-const ul = document.querySelector("ul");
+const div = document.getElementById("grid");
 
 for (let i = 1; i <= 100; i++) {
-  let li = document.createElement("li");
-  li.innerText = i;
+  let newDiv = document.createElement("div");
+  newDiv.innerText = i;
+  newDiv.classList.add(
+    "bg-gray-200",
+    "rounded-xl",
+    "flex",
+    "justify-center",
+    "p-1",
+    "w-20"
+  );
 
   if (i % 3 === 0 && i % 5 === 0) {
-    li.innerHTML = "FizzBuzz";
+    newDiv.innerHTML = "FizzBuzz";
   } else if (i % 3 === 0) {
-    li.innerHTML = "Fizz";
+    newDiv.innerHTML = "Fizz";
   } else if (i % 5 === 0) {
-    li.innerHTML = "Buzz";
+    newDiv.innerHTML = "Buzz";
   }
 
-  ul.append(li);
+  div.append(newDiv);
 }
